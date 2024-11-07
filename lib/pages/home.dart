@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             child: LearningPage(),
                           ),
                           SizedBox(
-                            height: espacio,
+                            height: 25,
                           ),
                           Tarjeta(
                             icono: Icons.piano,
