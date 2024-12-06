@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:key_focus/pages/horizontalscreen.dart';
 import 'piano.dart';
 import 'aprendizaje.dart';
 import 'juego.dart';
@@ -68,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             icono: Icons.people,
                             color: Colors.pinkAccent.shade100,
                             texto: "Colaboraciones",
-                            child: LearningPage(),
+                            child: PianoScreen(),
                           ),
                           SizedBox(
                             height: espacio,

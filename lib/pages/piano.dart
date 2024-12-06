@@ -1,69 +1,89 @@
 import 'package:flutter/material.dart';
 
-class PianoPage extends StatelessWidget {
-  const PianoPage({Key? key}) : super(key: key);
-
+class PianoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter Piano'),
+        title: Text("Piano"),
         backgroundColor: Colors.black,
       ),
       body: Center(
-        child: AspectRatio(
-          aspectRatio: 14 / 5, // Proporción de teclas del piano
-          child: Stack(
-            children: [
-              // Teclas blancas
-              Row(
-                children: List.generate(
-                  7, // Número de teclas blancas
-                  (index) => Expanded(
-                    child: Container(
-                      margin: const EdgeInsets.symmetric(horizontal: 0.5),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(color: Colors.black, width: 1),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              // Teclas negras superpuestas
-              Positioned.fill(
-                child: Row(
-                  children: [
-                    // Posición de las teclas negras (patrón realista)
-                    buildBlackKey(context),
-                    Spacer(flex: 1),
-                    buildBlackKey(context),
-                    Spacer(flex: 2),
-                    buildBlackKey(context),
-                    Spacer(flex: 1),
-                    buildBlackKey(context),
-                    Spacer(flex: 1),
-                    buildBlackKey(context),
-                    Spacer(flex: 2),
-                  ],
-                ),
-              ),
-            ],
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Piano Visual",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 20),
+            Piano(),
+          ],
         ),
       ),
     );
   }
+}
 
-  Widget buildBlackKey(BuildContext context) {
-    return FractionallySizedBox(
-      widthFactor: 0.6, // Ancho de la tecla negra en relación a la blanca
+class Piano extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(10),
+      color: Colors.black,
+      child: Column(
+        children: [
+          // White Keys
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: List.generate(7, (index) {
+              return GestureDetector(
+                onTap: () {
+                  print("White key $index pressed");
+                },
+                child: Container(
+                  height: 150,
+                  width: 50,
+                  margin: EdgeInsets.all(2),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: Colors.black, width: 2),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+              );
+            }),
+          ),
+          // Black Keys
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _blackKey(context),
+              _blackKey(context),
+              Spacer(flex: 1),
+              _blackKey(context),
+              _blackKey(context),
+              _blackKey(context),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _blackKey(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print("Black key pressed");
+      },
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.2, // Altura fija
-        margin: const EdgeInsets.symmetric(horizontal: 2),
-        decoration: const BoxDecoration(
+        height: 100,
+        width: 30,
+        margin: EdgeInsets.only(left: 20, right: 20, top: 0),
+        decoration: BoxDecoration(
           color: Colors.black,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(5)),
+          borderRadius: BorderRadius.circular(4),
+          border: Border.all(color: Colors.white, width: 2),
         ),
       ),
     );
