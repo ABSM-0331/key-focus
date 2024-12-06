@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'piano.dart';
 import 'aprendizaje.dart';
 import 'juego.dart';
 import '../widgets/tarjeta.dart';
@@ -58,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             icono: Icons.piano,
                             color: Colors.yellow.shade300,
                             texto: "Creación musical",
-                            child: LearningPage(),
+                            child: HorizontalScreen(),
                           ),
                           SizedBox(
                             height: espacio,
@@ -117,7 +118,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             texto: "Configuración",
                             child: LearningPage(),
                           ),
-                          
                         ],
                       ),
                     )

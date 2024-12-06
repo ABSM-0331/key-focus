@@ -6,9 +6,9 @@ class LearningPage extends StatefulWidget {
 }
 
 class LearningPageState extends State<LearningPage> {
-    var buttonStyle = ElevatedButton.styleFrom(
-      backgroundColor: Colors.blue.shade400,
-    );
+  var buttonStyle = ElevatedButton.styleFrom(
+    backgroundColor: Colors.blue.shade400,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,6 +38,7 @@ class LearningPageState extends State<LearningPage> {
                 ),
               ),
             ),
+            Stack(),
             Center(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
@@ -61,6 +62,7 @@ class LearningPageState extends State<LearningPage> {
                         child: Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: Column(
+                            key: Key("tarjeta"),
                             children: [
                               Row(
                                 mainAxisAlignment:
@@ -82,7 +84,7 @@ class LearningPageState extends State<LearningPage> {
                                     elevation: 0,
                                     color: Colors.grey.shade300,
                                     child: Padding(
-                                      padding: const EdgeInsets.all( 16.0),
+                                      padding: const EdgeInsets.all(16.0),
                                       child: Center(),
                                     ),
                                   ),
@@ -95,17 +97,18 @@ class LearningPageState extends State<LearningPage> {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children:[
+                      children: [
                         ElevatedButton(
                           onPressed: () => {Navigator.pop(context)},
                           style: buttonStyle,
                           child: const Text("Regresar"),
                         ),
                         ElevatedButton(
-                            onPressed: () => {},
-                            style: buttonStyle,
-                            child: Text(
-                              "Iniciar",),
+                          onPressed: () => {},
+                          style: buttonStyle,
+                          child: Text(
+                            "Iniciar",
+                          ),
                         )
                       ],
                     )
