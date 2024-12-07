@@ -38,7 +38,6 @@ class LearningPageState extends State<LearningPage> {
                 ),
               ),
             ),
-            Stack(),
             Center(
               child: Padding(
                 padding: const EdgeInsets.symmetric(

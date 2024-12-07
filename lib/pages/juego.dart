@@ -1,4 +1,5 @@
 library;
+
 //import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 
@@ -309,6 +310,6 @@ const paddleHeight = ballRadius * 2;
 const paddleStep = gameWidth * 0.05;
 const brickGutter = gameWidth * 0.015;
 final brickWidth =
-    (gameWidth - (brickGutter * (brickColors.length+1))) / brickColors.length;
+    (gameWidth - (brickGutter * (brickColors.length + 1))) / brickColors.length;
 const brickHeight = gameHeight * 0.04;
 const difficultyModifier = 1.05;

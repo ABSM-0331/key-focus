@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:key_focus/pages/horizontalscreen.dart';
+import 'package:key_focus/pages/horizontal_screen.dart';
 import 'piano.dart';
 import 'aprendizaje.dart';
 import 'juego.dart';

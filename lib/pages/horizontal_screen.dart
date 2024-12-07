@@ -69,7 +69,7 @@ class Piano extends StatelessWidget {
                 },
                 child: Container(
                   height: 250,
-                  width: 50,
+                  width: 49,
                   margin: EdgeInsets.all(2),
                   decoration: BoxDecoration(
                     color: Colors.white,
